@@ -1,3 +1,293 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* 10/16 * 100 = 62.5% */
+    font-size: 62.5%;
+}
+
+body {
+    padding: 2rem;
+    height: 100vh;
+    color: #444444;
+    background-color: #F3F3F3;
     font-family: 'PT Sans', sans-serif;
+}
+
+/* navigation */
+nav {
+    display: flex;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.welcome {
+    font-weight: 500;
+    font-size: 1.9rem;
+}
+
+.logo {
+    height: 5.25rem;
+}
+
+.login {
+    display: flex;
+}
+
+.login__input {
+    border: none;
+    width: 12rem;
+    color: inherit;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    text-align: center;
+    border-radius: 10rem;
+    padding: 0.5rem 2rem;
+    font-family: inherit;
+    border: 1px solid #FFFFFF;
+    transition: all 0.3s;
+}
+
+.login__input:focus {
+    outline: none;
+    border: 1px solid #CCCCCC;
+}
+
+.login__input::placeholder {
+    color: #BBBBBB;
+}
+
+.login__btn {
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    background: none;
+    font-size: 2.2rem;
+    transition: all 0.3s;
+}
+
+.login__btn:hover,
+.login__btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+    outline: none;
+    color: #777777;
+}
+
+/* main  */
+.app {
+    position: relative;
+    max-width: 100rem;
+    margin: 4rem auto;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: auto repeat(3, 15rem) auto;
+    gap: 2rem;
+
+    /* this create fadeIn/fadeOut animation  */
+    /* opacity: 0; */
+    transition: all 1s;
+}
+
+.balance {
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: flex-end;
+    grid-column: 1 / span 2;
+    justify-content: space-between;
+}
+
+.balance__label {
+    font-weight: 500;
+    font-size: 2.2rem;
+    margin-bottom: -0.2rem;
+}
+
+.balance__date {
+    color: #888888;
+    font-size: 1.4rem;
+}
+
+.balance__value {
+    font-weight: 400;
+    font-size: 4.5rem;
+}
+
+/* movements  */
+.movements {
+    overflow: scroll;
+    border-radius: 1rem;
+    grid-row: 2 / span 3;
+    background-color: #FFFFFF;
+}
+
+.movements__row {
+    display: flex;
+    align-items: center;
+    padding: 2.25rem 4rem;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.movements__type {
+    font-weight: 500;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    margin-right: 2rem;
+    border-radius: 10rem;
+    padding: 0.1rem 1rem;
+    text-transform: uppercase;
+}
+
+.movements__date {
+    font-weight: 500;
+    color: #666666;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.movements__type--deposit {
+    background-image: linear-gradient(to top left, #39B385, #9BE15D);
+}
+
+.movements__type--withdrawal {
+    background-image: linear-gradient(to top left, #E52A5A, #FF585F);
+}
+
+.movements__value {
+    font-size: 1.7rem;
+    margin-left: auto;
+}
+
+/* summary */
+.summary {
+    display: flex;
+    grid-row: 5 / 6;
+    margin-top: 1rem;
+    padding: 0 0.3rem;
+    align-items: baseline;
+}
+
+.summary__label {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-right: 0.8rem;
+    text-transform: uppercase;
+}
+
+.summary__value {
+    font-size: 2.2rem;
+    margin-right: 2.5rem;
+}
+
+.summary__value--in,
+.summary__value--interest {
+    color: #66C873;
+}
+
+.summary__value--out {
+    color: #F5465D;
+}
+
+.btn--sort {
+    border: none;
+    cursor: pointer;
+    background: none;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-left: auto;
+}
+
+/* operations */
+.operation {
+    color: #333333;
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+}
+
+.operation--transfer {
+    background-image: linear-gradient(to top left, #FFB003, #FFCB03);
+}
+
+
+.operation--loan {
+    background-image: linear-gradient(to top left, #39B385, #9BE15D);
+}
+
+.operation--close {
+    background-image: linear-gradient(to top left, #E52A5A, #FF585F);
+}
+
+h2 {
+    color: #333333;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.form {
+    display: grid;
+    gap: 0.4rem 1rem;
+    grid-template-rows: auto auto;
+    grid-template-columns: 2.5fr 2.5fr 1fr;
+}
+
+/* loan  */
+.form.form--loan {
+    grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+
+.form__label--loan {
+    grid-row: 2;
+}
+
+.form__input {
+    width: 100%;
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: inherit;
+    transition: all 0.3s;
+    padding: 0.3rem 1rem;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.form__input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form__label {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.form__btn {
+    border: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+    border-radius: 0.7rem;
+    background-color: #fff;
+}
+
+.form__btn:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logout-timer {
+    text-align: right;
+    padding: 0 0.3rem;
+    margin-top: 1.9rem;
+    font-size: 1.25rem;
+}
+
+.timer {
+    font-weight: 600;
 }
