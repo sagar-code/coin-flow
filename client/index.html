@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png" />
+    <link rel="shortcut icon" href="imgs/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="imgs/favicon/site.webmanifest" />
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet" />
+    <!-- css  -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Coin Flow</title>
+</head>
+
+<body>
+    <!-- top navigation  -->
+    <nav>
+        <p class="welcome">Log in to get started</p>
+        <img src="imgs/icon.svg" alt="Logo" class="logo">
+        <form action="#" class="login">
+            <input type="text" class="login__input login__input--user">
+            <input type="password" class="login__input login__input--pin">
+            <button class="login__btn">&rarr;</button>
+        </form>
+    </nav>
+
+    <main class="app">
+        <div class="balance">
+            <div>
+                <p class="balance__label">Current Balance</p>
+                <p class="balance__date">
+                    As of <span class="date">05/06/2022</span>
+                </p>
+            </div>
+            <p class="balance__value"></p>
+        </div>
+    </main>
+
+
+    <!-- script  -->
+    <script src="script.js"></script>
+</body>
+
+</html>
